@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seo-sync"
+version = "0.7.0"
+description = "Shared clients for pulling Google Search Console, GA4 and DataForSEO data into a project's own MySQL database."
+requires-python = ">=3.10"
+dependencies = [
+    "google-api-python-client>=2.120.0",
+    "google-auth>=2.28.0",
+    "pymysql>=1.1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["seo_sync*"]
+
+[tool.setuptools.package-data]
+seo_sync = ["migrations/*.sql"]
